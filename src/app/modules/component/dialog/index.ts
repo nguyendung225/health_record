@@ -1,0 +1,1 @@
+export { default as OCTConfirmDialog } from "./OCTConfirmDialog";

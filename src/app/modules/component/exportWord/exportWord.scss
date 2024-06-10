@@ -1,0 +1,142 @@
+@import "../../styles/variable";
+
+.word {
+	--font-size-sm: 14px;
+	--font-size-md: 18px;
+	--font-size-lg: 24px;
+	--font-size-xl: 30px;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0 10px;
+
+	* {
+		box-sizing: border-box;
+		font-size: var(--font-size-md);
+		font-family: "Times New Roman", Times, serif;
+
+		p {
+			margin: 0;
+			padding-top: 4px;
+      font-size: inherit;
+		}
+
+		i {
+			font-size: 14px;
+		}
+	}
+
+	.table-toolbar {
+		padding: 5px 0 0 0 !important;
+	}
+
+	.table-responsive {
+		.text-header-table {
+			.bg-header-table {
+				background-color: white !important;
+			}
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table,
+		table th,
+		table td {
+			border: 1px solid $color-text-table !important;
+		}
+	}
+
+	.fs-sm {
+		font-size: var(--font-size-sm) !important;
+	}
+
+	.fs-md {
+		font-size: var(--font-size-md) !important;
+	}
+
+	.fs-lg {
+		font-size: var(--font-size-lg) !important;
+	}
+
+	.fs-xl {
+		font-size: var(--font-size-xl) !important;
+	}
+
+	.custom-text-underline {
+		border-bottom: 1px solid #000;
+	}
+
+	.image-profile {
+		width: 160px;
+		height: 240px;
+		margin-right: 36px;
+	}
+
+	.border-wrapper {
+		border: 1px solid #000;
+
+		&>* {
+			padding: 6px 10px;
+			margin: 0;
+		}
+
+		&> :not(:last-child) {
+				border-bottom: 1px solid #000;
+		}
+	}
+
+	.text-indent-40 {
+		text-indent: 40px;
+	}
+
+	.text-value,
+	.space-bottom {
+		margin-bottom: 3px;
+	}
+
+  .header-underline {
+    position: relative;
+    width: fit-content;
+    &::before {
+      content: "";
+      width: 80%;
+      border-bottom: 2px solid var(--kt-black);
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+	.text-italic {
+		font-style: italic;
+	}
+
+	.text-capitalize {
+		text-transform: capitalize !important;
+	}
+
+	.align-start {
+		align-items: start;
+	}
+
+	&.colors-word .text-underline {
+		border-color: var(--kt-gray-600) !important;
+		color: var(--bs-body-color) !important;
+	}
+
+	.break-word {
+		word-break: break-all;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.word {
+		--font-size-sm: 14px;
+		--font-size-md: 16px;
+		--font-size-lg: 20px;
+		--font-size-xl: 32px;
+	}
+}
