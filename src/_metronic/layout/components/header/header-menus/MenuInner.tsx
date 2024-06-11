@@ -8,6 +8,7 @@ import { KTSVG, toAbsoluteUrl } from '../../../../helpers';
 import { checkMenuByPermissions } from '../../../../../app/modules/utils/FunctionUtils';
 import { useEffect, useState } from 'react';
 import { TMenu } from '../../../../../app/dashboard/listMenu';
+import { setSubMenu } from '../../../../../app/modules/auth';
 
 export function MenuInner() {
   const intl = useIntl();
@@ -15,10 +16,11 @@ export function MenuInner() {
   const checkedMenu = checkMenuByPermissions();
 
   const handleButtonClick = (module: string) => {
-    const selectedMenu = checkedMenu.find((menu) => menu.name === module);
+    const selectedMenu = checkedMenu.find((menu) => menu.to === module);
     if (selectedMenu) {
       localStorage.setItem(headerConstant.LIST_SUB_MENU, JSON.stringify(selectedMenu.subMenu));
-      navigate(`/${module}`);
+      setSubMenu(module);
+      // navigate(`/${module}`);
     }
   };
   
@@ -74,7 +76,7 @@ export function MenuInner() {
         <div className="header-list-nav">
           {checkedMenu?.map((item: TMenu, index: number) => {
             return (
-              <MenuItem key={index} title={intl.formatMessage({ id: item?.title })} to={item?.to} onClick={() => handleButtonClick(item.name)} />
+              <MenuItem key={index} title={intl.formatMessage({ id: item?.title })} to={item?.to} onClick={() => handleButtonClick(item.to)} />
             )
           })}
         </div>
