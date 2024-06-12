@@ -165,4 +165,23 @@ export const allMenu: TMenu[] = [
       },
     ]
   },
+  {
+    title: "Thông tin nhân sự",
+    to: PATH_ROUTES.DSNS,
+    name: "personnel",
+    permission: PERMISSIONS.ADMIN,
+    ability: AUTHORITIES.AUTHORITY.VIEW,
+    icon: "/media/icons/person.svg",
+    subMenu: [
+      {
+        title: "Danh sách nhân sự",
+        to: PATH_ROUTES.DSNS,
+        hasBullet: false,
+        icon: "/media/icons/person.svg",
+        permission: PERMISSIONS.ADMIN,
+        ability: AUTHORITIES.USER.VIEW,
+      },
+      
+    ]
+  },
 ]

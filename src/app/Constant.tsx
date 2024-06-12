@@ -113,6 +113,7 @@ export const PATH_ROUTES = {
   TTNS: '/thong-tin-nhan-su',
   HSYT: '/ho-so-y-te',
   TTTC: 'thong-tin-tiem-chung',
+  DSNS: '/danh-sach-nhan-su',
 }
 
 export const PAGINATION = {

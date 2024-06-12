@@ -1,0 +1,16 @@
+.card {
+    .with-child.card-header {
+        padding: 0;
+    }
+
+    .card-header {
+        border-bottom: none;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+    &.selected {
+            background: #E6F7FF;
+        }
+    }
+} 
