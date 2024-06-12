@@ -4,9 +4,11 @@ import { OCTTable, InputSearch, OCTKTSVG } from '@oceantech/oceantech-ui';
 import { listDataKhamSkDinhKiChiTiet } from '../constants/fakeData';
 import { ColumnDSKhamSKDinhKiChiTiet } from '../constants/columns';
 import { TYPE } from '../../utils/Constant';
+import { useNavigate } from 'react-router-dom';
 type Props = {}
 
 const DSKhamSkDinhKiChiTiet = (props: Props) => {
+    const navigate = useNavigate();
     const [keyword, setKeyword] = useState<string>("");
     const [totalElements, setTotalElements] = useState<number>(0);
     const [numberOfElements, setNumberOfElements] = useState<number>(0);
@@ -87,6 +89,9 @@ const DSKhamSkDinhKiChiTiet = (props: Props) => {
                         totalElements={totalElements}
                         numberOfElements={numberOfElements}
                         height={700}
+                        handleDoubleClick={(row: any) => { 
+                            navigate(`${row?.id}`)
+                        }}
                     />
                 </Col>
             </Row>
