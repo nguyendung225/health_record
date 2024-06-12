@@ -5,6 +5,8 @@ import { AUTHORITIES, PATH_ROUTES, PERMISSIONS, REDIRECT_PATH } from "../Constan
 import { hasAccessAuthority } from "../modules/utils/FunctionUtils";
 import { Dashboard } from "../dashboard/Dashboard";
 import { HomePage } from "../homepage/HomePage";
+import KhamSkDinhKi from "../modules/kham-sk-dinh-ki/KhamSKDinhKi";
+import DSKhamSkDinhKiChiTiet from "../modules/kham-sk-dinh-ki/component/DSKhamSKDinhKiChiTiet";
 
 interface PrivateRouteProps {
   auth: string;
@@ -21,11 +23,50 @@ const PrivateRoutes = () => {
   return (
     <Routes>
       <Route index element={<Navigate to="/dashboard" />} />
-      <Route path="/*" element={<Dashboard />} />
+      {/* <Route path="/*" element={<Dashboard />} /> */}
       <Route element={<MasterLayout />}>
         {/* Pages */}
         <Route
           path={PATH_ROUTES.HOME + "/*"}
+          element={
+            <PrivateRoute
+              auth={PERMISSIONS.ADMIN}
+              ability={AUTHORITIES.USER.VIEW}
+              component={HomePage}
+              redirect={REDIRECT_PATH.HOME}
+            />
+          }
+        />
+        <Route
+          path={PATH_ROUTES.TTNS}
+          element={
+            <PrivateRoute
+              auth={PERMISSIONS.ADMIN}
+              ability={AUTHORITIES.USER.VIEW}
+              component={HomePage}
+              redirect={REDIRECT_PATH.HOME}
+            />
+          }
+        />
+
+        <Route
+          path={PATH_ROUTES.HSYT}
+          element={
+            <PrivateRoute
+              auth={PERMISSIONS.ADMIN}
+              ability={AUTHORITIES.USER.VIEW}
+              component={KhamSkDinhKi}
+              redirect={REDIRECT_PATH.HOME}
+            />
+          }
+        >
+        </Route>
+        <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki"} element={<KhamSkDinhKi />} />
+        <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki/:id"} element={<DSKhamSkDinhKiChiTiet />} />
+        <Route path={PATH_ROUTES.HSYT + "/*"} element={<KhamSkDinhKi />} />
+
+        <Route
+          path={PATH_ROUTES.TTTC }
           element={
             <PrivateRoute
               auth={PERMISSIONS.ADMIN}

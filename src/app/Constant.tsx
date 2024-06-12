@@ -110,6 +110,9 @@ export const MODULE_NAME = {
 
 export const PATH_ROUTES = {
   HOME: '/home',
+  TTNS: '/thong-tin-nhan-su',
+  HSYT: '/ho-so-y-te',
+  TTTC: 'thong-tin-tiem-chung',
 }
 
 export const PAGINATION = {

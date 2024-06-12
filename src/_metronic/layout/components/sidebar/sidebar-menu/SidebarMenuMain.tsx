@@ -90,7 +90,7 @@ const SidebarMenuMain = () => {
           />
         ))
     )
-  }, [isTabletOrMobile, listMenuParent]);
+  }, [isTabletOrMobile, listMenuParent, listMenuItem]);
 
   return (<>
     {renderMenu}

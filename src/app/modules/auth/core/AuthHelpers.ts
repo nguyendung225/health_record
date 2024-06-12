@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import { KEY_LOCALSTORAGE, RESPONSE_STATUS_CODE } from './_consts';
 import { checkMenuByPermissions } from '../../utils/FunctionUtils';
 import { localStorageItem } from '../../utils/LocalStorage';
+import { headerConstant } from '../../../../_metronic/layout/components/header/header-menus/constant';
 
 const AUTH_LOCAL_STORAGE_KEY = KEY_LOCALSTORAGE.AUTH_LOCAL_STORAGE_KEY
 
@@ -40,9 +41,15 @@ const setAuth = (auth: AuthModel) => {
   }
 }
 
-const setSubMenu = () => {
+const setSubMenu = (to: string = "/home") => {
   const checkedMenu = checkMenuByPermissions();
   const currentModuleName = localStorageItem.get(KEY_LOCALSTORAGE.CURRENT_MODULE);
+
+  if (to) {
+    const selectedMenu = checkedMenu.find((menu) => menu.to === to);
+    selectedMenu && localStorage.setItem(headerConstant.LIST_SUB_MENU, JSON.stringify(selectedMenu?.subMenu));
+    return;
+  }
 
   if (localStorageItem.get(KEY_LOCALSTORAGE.AUTHORITIES)) {
     const selectSubMenu = JSON.stringify(checkedMenu?.filter(menu => menu?.name === currentModuleName)[0]?.subMenu || [])
