@@ -498,3 +498,12 @@ input[type="checkbox"] {
 .text-left {
     text-align: left;
 }
+
+.hyperlink {
+    color: $color-bright-cyan;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

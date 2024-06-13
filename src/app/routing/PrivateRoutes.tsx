@@ -7,6 +7,8 @@ import { Dashboard } from "../dashboard/Dashboard";
 import { HomePage } from "../homepage/HomePage";
 import KhamSkDinhKi from "../modules/kham-sk-dinh-ki/KhamSKDinhKi";
 import DSKhamSkDinhKiChiTiet from "../modules/kham-sk-dinh-ki/component/DSKhamSKDinhKiChiTiet";
+import DSNhanSu from "../modules/ds-nhan-su/DSNhanSu";
+import DSNhanSuChiTiet from "../modules/ds-nhan-su/component/DSNhanSuChiTiet";
 import HoSoKhamSKChiTiet from "../modules/kham-sk-dinh-ki/component/HoSoKhamSKChiTiet";
 
 interface PrivateRouteProps {
@@ -66,6 +68,9 @@ const PrivateRoutes = () => {
         <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki/:id"} element={<DSKhamSkDinhKiChiTiet />} />
         <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki/:id/:id"} element={<HoSoKhamSKChiTiet />} />
         <Route path={PATH_ROUTES.HSYT + "/*"} element={<KhamSkDinhKi />} />
+
+        <Route path={PATH_ROUTES.DSNS + "/*"} element={<DSNhanSu />} />
+        <Route path={PATH_ROUTES.DSNS + "/chi-tiet-nhan-su/:id"} element={<DSNhanSuChiTiet />} />
 
         <Route
           path={PATH_ROUTES.TTTC }
