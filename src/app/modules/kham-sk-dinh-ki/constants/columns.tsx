@@ -226,3 +226,50 @@ export const ColumnDSKhamSKDinhKiChiTiet = (props: any) => {
         },
     ];
 }
+
+export const ColumnKetQuaXetNghiem = (props: any) => {
+    return [
+        {
+            name: "Dịch vụ",
+            field: "service",
+            headerStyle: {
+                minWidth: "250px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left"
+            }
+        },
+        {
+            name: "Kết quả",
+            field: "result",
+            headerStyle: {
+                minWidth: "150px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "center"
+            }
+        },
+        {
+            name: "Tham chiếu",
+            field: "reference",
+            headerStyle: {
+                minWidth: "150px",
+            },
+            cellStyle: {
+                textAlign: "center"
+            }
+        },
+        {
+            name: "Đơn vị",
+            field: "unit",
+            headerStyle: {
+                minWidth: "150px",
+            },
+            cellStyle: {
+                textAlign: "center"
+            }
+        }
+    ];
+}

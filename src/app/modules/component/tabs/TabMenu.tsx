@@ -5,6 +5,7 @@ import { tab } from "../../models/tabModels";
 type TabMenuProps = {
     danhsachTabs: tab[];
     keyDanhSachTabs?: string;
+    className?: string;
 }
 
 export const TabMenu: FC<TabMenuProps> = (props) => {
@@ -24,7 +25,7 @@ export const TabMenu: FC<TabMenuProps> = (props) => {
 
     return (
       <Tabs
-        className="tabs nav nav-tabs customs-tabs"
+        className={`tabs nav nav-tabs customs-tabs ${props?.className || ""}`}
         activeKey={activeTab}
         onSelect={handleTabSelect}
       >
