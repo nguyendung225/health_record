@@ -10,6 +10,7 @@ import DSKhamSkDinhKiChiTiet from "../modules/kham-sk-dinh-ki/component/DSKhamSK
 import DSNhanSu from "../modules/ds-nhan-su/DSNhanSu";
 import DSNhanSuChiTiet from "../modules/ds-nhan-su/component/DSNhanSuChiTiet";
 import HoSoKhamSKChiTiet from "../modules/kham-sk-dinh-ki/component/HoSoKhamSKChiTiet";
+import ThongTinTiemChung from "../modules/thong-tin-tiem-chung/ThongTinTiemChung";
 
 interface PrivateRouteProps {
   auth: string;
@@ -83,6 +84,8 @@ const PrivateRoutes = () => {
             />
           }
         />
+        <Route path={PATH_ROUTES.TTTC + "/kham-sk-dinh-ki"} element={<ThongTinTiemChung />} />
+        <Route path={PATH_ROUTES.TTTC + "/*"} element={<ThongTinTiemChung />} />
         {/* Page Not Found */}
         <Route path="*" element={<Navigate to={REDIRECT_PATH.NOT_FOUND}/>} />
       </Route>
