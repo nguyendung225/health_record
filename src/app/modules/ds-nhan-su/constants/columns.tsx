@@ -29,6 +29,9 @@ export const getColumnsPersonnel = ({ handleDetailPersonnel }: any) => {
                 minWidth: "220px",
                 textAlign: "center"
             },
+            cellStyle: {
+                textAlign: "left",
+            },
         },
         {
             name: "Giới tính",
@@ -69,6 +72,9 @@ export const getColumnsPersonnel = ({ handleDetailPersonnel }: any) => {
                 minWidth: "210px",
                 textAlign: "center"
             },
+            cellStyle: {
+                textAlign: "left",
+            },
         },
         {
             name: "Vị trí",
@@ -76,6 +82,9 @@ export const getColumnsPersonnel = ({ handleDetailPersonnel }: any) => {
             headerStyle: {
                 minWidth: "210px",
                 textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
             },
         },
         {
@@ -86,5 +95,238 @@ export const getColumnsPersonnel = ({ handleDetailPersonnel }: any) => {
                 textAlign: "center"
             },
         }
+    ]
+}
+
+export const getColumnsVaccinationInfo = ({ }: any) => {
+    return [
+        {
+            name: "STT",
+            field: "",
+            headerStyle: {
+                minWidth: "40px",
+                textAlign: "center"
+            },
+            render: (row: any, index: number, numericalOrder: number) => (
+                <span>{numericalOrder}</span>
+            )
+        },
+        {
+            name: "Ngày tiêm",
+            field: "dateOfInjection",
+            headerStyle: {
+                minWidth: "115px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Vaccine",
+            field: "vaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Loại vaccine",
+            field: "typeOfVaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Mũi tiêm",
+            field: "injections",
+            headerStyle: {
+                minWidth: "125px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Tình trạng SK sau khi tiêm",
+            field: "statusHealth",
+            headerStyle: {
+                minWidth: "330px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Lần tiêm tiếp theo",
+            field: "nextInjections",
+            headerStyle: {
+                minWidth: "210px",
+                textAlign: "center"
+            },
+        },
+    ]
+}
+
+export const getColumnsBenhNgheNghiep = ({ }: any) => {
+    return [
+        {
+            name: "STT",
+            field: "",
+            headerStyle: {
+                minWidth: "40px",
+                textAlign: "center"
+            },
+            render: (row: any, index: number, numericalOrder: number) => (
+                <span>{numericalOrder}</span>
+            )
+        },
+        {
+            name: "Ngày phát hiện",
+            field: "dateOfInjection",
+            headerStyle: {
+                minWidth: "115px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Loại bệnh nghề nghiệp",
+            field: "vaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Nguyên nhân",
+            field: "typeOfVaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+    ]
+}
+
+export const getColumnsTaiNanLaoDong = ({ }: any) => {
+    return [
+        {
+            name: "STT",
+            field: "",
+            headerStyle: {
+                minWidth: "40px",
+                textAlign: "center"
+            },
+            render: (row: any, index: number, numericalOrder: number) => (
+                <span>{numericalOrder}</span>
+            )
+        },
+        {
+            name: "Ngày tai nạn",
+            field: "dateOfInjection",
+            headerStyle: {
+                minWidth: "115px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Phân loại tai nạn",
+            field: "vaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Địa điểm",
+            field: "typeOfVaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Nguyên nhân",
+            field: "injections",
+            headerStyle: {
+                minWidth: "125px",
+                textAlign: "center"
+            },
+        },
+    ]
+}
+
+
+export const getColumnsThongTinGiaDinh = ({ }: any) => {
+    return [
+        {
+            name: "STT",
+            field: "",
+            headerStyle: {
+                minWidth: "40px",
+                textAlign: "center"
+            },
+            render: (row: any, index: number, numericalOrder: number) => (
+                <span>{numericalOrder}</span>
+            )
+        },
+        {
+            name: "Quan hệ thân nhân",
+            field: "dateOfInjection",
+            headerStyle: {
+                minWidth: "115px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Họ tên thân nhân",
+            field: "vaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Ngày sinh",
+            field: "typeOfVaccine",
+            headerStyle: {
+                minWidth: "180px",
+                textAlign: "center"
+            },
+            cellStyle: {
+                textAlign: "left",
+            },
+        },
+        {
+            name: "Mã số thuế NPT",
+            field: "injections",
+            headerStyle: {
+                minWidth: "125px",
+                textAlign: "center"
+            },
+        },
+        {
+            name: "Giảm trừ",
+            field: "injections",
+            headerStyle: {
+                minWidth: "125px",
+                textAlign: "center"
+            },
+        },
     ]
 }

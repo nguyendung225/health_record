@@ -41,41 +41,17 @@ export const allMenu: TMenu[] = [
   // },
   {
     title: "Thông tin nhân sự",
-    to: PATH_ROUTES.TTNS,
-    name: "system",
+    to: PATH_ROUTES.DSNS,
+    name: "personnel",
     permission: PERMISSIONS.ADMIN,
     ability: AUTHORITIES.AUTHORITY.VIEW,
-    icon: "/media/icons/homepage/system.svg",
+    icon: "/media/icons/person.svg",
     subMenu: [
       {
-        title: "Hồ sơ tổng quan",
-        to: PATH_ROUTES.TTNS + 1,
-        hasBullet: false,
-        icon: "/media/icons/overview.svg",
-        permission: PERMISSIONS.ADMIN,
-        ability: AUTHORITIES.USER.VIEW,
-      },
-      {
-        title: "Khám theo yêu cầu",
-        to: PATH_ROUTES.TTNS + 2,
+        title: "Danh sách nhân sự",
+        to: PATH_ROUTES.DSNS,
         hasBullet: false,
         icon: "/media/icons/person.svg",
-        permission: PERMISSIONS.ADMIN,
-        ability: AUTHORITIES.USER.VIEW,
-      },
-      {
-        title: "Khám SK định kì",
-        to: PATH_ROUTES.TTNS + 3,
-        hasBullet: false,
-        icon: "/media/icons/remind-nav.svg",
-        permission: PERMISSIONS.ADMIN,
-        ability: AUTHORITIES.USER.VIEW,
-      },
-      {
-        title: "Hồ sơ tổng quan",
-        to: PATH_ROUTES.TTNS + 3,
-        hasBullet: false,
-        icon: "/media/icons/contract.svg",
         permission: PERMISSIONS.ADMIN,
         ability: AUTHORITIES.USER.VIEW,
       },
@@ -163,25 +139,6 @@ export const allMenu: TMenu[] = [
         permission: PERMISSIONS.ADMIN,
         ability: AUTHORITIES.USER.VIEW,
       },
-    ]
-  },
-  {
-    title: "Thông tin nhân sự",
-    to: PATH_ROUTES.DSNS,
-    name: "personnel",
-    permission: PERMISSIONS.ADMIN,
-    ability: AUTHORITIES.AUTHORITY.VIEW,
-    icon: "/media/icons/person.svg",
-    subMenu: [
-      {
-        title: "Danh sách nhân sự",
-        to: PATH_ROUTES.DSNS,
-        hasBullet: false,
-        icon: "/media/icons/person.svg",
-        permission: PERMISSIONS.ADMIN,
-        ability: AUTHORITIES.USER.VIEW,
-      },
-      
     ]
   },
 ]
