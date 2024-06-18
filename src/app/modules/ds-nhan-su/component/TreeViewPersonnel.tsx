@@ -9,6 +9,7 @@ type IProps = {
   onNodeClick?: (node: any) => void;
   childrenKey: string;
   title: string | JSX.Element;
+  hasSearchInput?: boolean;
 };
 
 function CustomToggle({
@@ -37,6 +38,7 @@ const TreeViewPersonnel: React.FC<IProps> = ({
   onNodeClick,
   childrenKey,
   title,
+  hasSearchInput = true,
 }) => {
   const [nodesExpand, setNodesExpand] = useState<any[]>([]);
   const [selectedNodeId, setSelectedNodeId] = useState<string>();
@@ -141,14 +143,16 @@ const TreeViewPersonnel: React.FC<IProps> = ({
 
   return (
     <>
-      <div className="spaces fs-14 text-header-table fw-600 py-12">{title}</div>
-      <div>
-        <InputSearch
-          onChange={() => { }}
-          handleSearch={() => { }}
-          placeholder="Tìm kiếm đơn vị/phòng ban"
-        />
-      </div>
+      <div className="spaces fs-14 text-header-table fw-600 pt-12">{title}</div>
+      {hasSearchInput && (
+        <div className="mt-12">
+          <InputSearch
+            onChange={() => { }}
+            handleSearch={() => { }}
+            placeholder="Tìm kiếm đơn vị/phòng ban"
+          />
+        </div>
+      )}
       <div className="mt-2">{data.map((node) => renderTreeNode(node))}</div>
     </>
   );

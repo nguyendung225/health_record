@@ -125,7 +125,7 @@ export const allMenu: TMenu[] = [
   },
   {
     title: "Thông tin tiêm chủng",
-    to: PATH_ROUTES.TTTC,
+    to: PATH_ROUTES.TTTC + "/ho-so-tong-quan",
     name: "system",
     permission: PERMISSIONS.ADMIN,
     ability: AUTHORITIES.AUTHORITY.VIEW,
@@ -133,7 +133,7 @@ export const allMenu: TMenu[] = [
     subMenu: [
       {
         title: "Hồ sơ tổng quan",
-        to: PATH_ROUTES.TTTC + 1,
+        to: PATH_ROUTES.TTTC + "/ho-so-tong-quan",
         hasBullet: false,
         icon: "/media/icons/overview.svg",
         permission: PERMISSIONS.ADMIN,
@@ -141,7 +141,7 @@ export const allMenu: TMenu[] = [
       },
       {
         title: "Khám theo yêu cầu",
-        to: PATH_ROUTES.TTTC + 2,
+        to: PATH_ROUTES.TTTC + "/kham-theo-yeu-cau",
         hasBullet: false,
         icon: "/media/icons/person.svg",
         permission: PERMISSIONS.ADMIN,
@@ -149,7 +149,7 @@ export const allMenu: TMenu[] = [
       },
       {
         title: "Khám SK định kì",
-        to: PATH_ROUTES.TTTC + 3,
+        to: PATH_ROUTES.TTTC + "/kham-sk-dinh-ki",
         hasBullet: false,
         icon: "/media/icons/remind-nav.svg",
         permission: PERMISSIONS.ADMIN,
@@ -157,7 +157,7 @@ export const allMenu: TMenu[] = [
       },
       {
         title: "Hồ sơ tổng quan",
-        to: PATH_ROUTES.TTTC + 3,
+        to: PATH_ROUTES.TTTC + "/ho-so-tong-quan-2",
         hasBullet: false,
         icon: "/media/icons/contract.svg",
         permission: PERMISSIONS.ADMIN,
