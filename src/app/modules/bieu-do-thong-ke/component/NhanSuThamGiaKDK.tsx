@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
 import { Button } from 'react-bootstrap';
+import ChiTietBieuDo from './ChiTietBieuDo';
 
 const NhanSuThamGiaKDK = () => {
     const chartRef = useRef(null);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
-    useEffect(() => {
+    const initChart = (radius = '50%') => {
         const chart = echarts.init(chartRef.current);
 
         const data = [
@@ -32,14 +34,15 @@ const NhanSuThamGiaKDK = () => {
                 data: data.map(item => item.name),
                 formatter: (name: string) => {
                     const item = data.find(d => d.name === name);
-                    return `${name}\n${item?.description || ""}`;
+                    return `${name}`;
                 }
             },
             series: [
                 {
                     name: 'Trạng thái khám',
                     type: 'pie',
-                    radius: '50%',
+                    radius: radius,
+                    center: ['50%', '50%'],
                     data: data,
                     label: {
                         formatter: '{d}%'
@@ -57,10 +60,23 @@ const NhanSuThamGiaKDK = () => {
 
         chart.setOption(options);
 
+        return chart;
+    }
+
+    useEffect(() => {
+        const chart = initChart();
+
         return () => {
             chart.dispose();
         };
     }, []);
+
+    const handleShowModal = () => {
+        setShowModal(true);
+        setTimeout(() => {
+            const chart = initChart("70%");
+        }, 0);
+    };
 
     return (
         <div className='d-flex flex-row flex-center'>
@@ -69,6 +85,15 @@ const NhanSuThamGiaKDK = () => {
                 style={{ height: '400px', width: '100%' }}
             />
             <div>
+                <Button
+                    className='spaces w-80 button-primary py-4 h-31 mx-4 mb-10'
+                    size='sm'
+                    variant='primary'
+                    onClick={handleShowModal}
+                >
+                    <i className="bi bi-eye fs-2"></i>
+                    Xem
+                </Button>
                 <Button
                     className='spaces w-80 button-primary py-4 h-31 mx-4 mb-10'
                     size='sm'
@@ -115,6 +140,13 @@ const NhanSuThamGiaKDK = () => {
                     JPEG
                 </Button>
             </div>
+
+            <ChiTietBieuDo
+                showModal={showModal}
+                setShowModal={setShowModal}
+                chartRef={chartRef}
+                title={"Biểu đồ thống kê nhân sự tham gia khám định kì"}
+            />
         </div>
     );
 };
