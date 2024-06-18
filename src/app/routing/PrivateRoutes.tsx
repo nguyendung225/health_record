@@ -11,6 +11,7 @@ import DSNhanSu from "../modules/ds-nhan-su/DSNhanSu";
 import DSNhanSuChiTiet from "../modules/ds-nhan-su/component/DSNhanSuChiTiet";
 import HoSoKhamSKChiTiet from "../modules/kham-sk-dinh-ki/component/HoSoKhamSKChiTiet";
 import ThongTinTiemChung from "../modules/thong-tin-tiem-chung/ThongTinTiemChung";
+import BieuDoThongKe from "../modules/bieu-do-thong-ke/BieuDoThongKe";
 
 interface PrivateRouteProps {
   auth: string;
@@ -65,6 +66,8 @@ const PrivateRoutes = () => {
           }
         >
         </Route>
+        <Route path={PATH_ROUTES.HSYT + "/ho-so-tong-quan"} element={<BieuDoThongKe />} />
+
         <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki"} element={<KhamSkDinhKi />} />
         <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki/:id"} element={<DSKhamSkDinhKiChiTiet />} />
         <Route path={PATH_ROUTES.HSYT + "/kham-sk-dinh-ki/:id/:id"} element={<HoSoKhamSKChiTiet />} />
