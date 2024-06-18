@@ -185,7 +185,33 @@ export const fakeDataTree = [
     },
 ];
 
+export const fakeDataTTTC = [
+    {
+        id: "2",
+        dateOfInjection: "01/01/2022",
+        vaccine: "Vaccine 1",
+        typeOfVaccine: "Vaccine 1",
+        injections: "1",
+        statusHealth: "Đang tiếp theo",
+        nextInjections: "01/01/2022",
+    },
+    {
+        id: "3",
+        dateOfInjection: "01/01/2022",
+        vaccine: "Vaccine 1",
+        typeOfVaccine: "Vaccine 1",
+        injections: "1",
+        statusHealth: "Đang tiếp theo",
+        nextInjections: "01/01/2022",
+    },
+]
+
 export const TRANG_THAI_NHAN_SU = {
     DANG_LAM_VIEC: "DANG_LAM_VIEC",
     CHUA_LAM_VIEC: "CHUA_LAM_VIEC",
+    DA_TIEM: "DA_TIEM",
+    CHUA_TIEM: "CHUA_TIEM",
+    QUA_HEN: "QUA_HEN",
+    TONG_SO_MUI: "TONG_SO_MUI",
 }
+

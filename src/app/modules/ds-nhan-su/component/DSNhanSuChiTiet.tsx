@@ -7,15 +7,23 @@ import TabMenu from '../../component/tabs/TabMenu';
 import '../styles/style.scss';
 import TrangThaiNhanSu from './TrangThaiNhanSu';
 import { TRANG_THAI_NHAN_SU } from '../constants/fakeData';
+import ChiTietTTChung from './ChiTietTTChungTab';
+import ChiTietTTTiemChung from './ChiTietTTTiemChungTab';
+import ChiTietTTCongViec from './ChiTietTTCongViecTab';
+import ChiTietTTChungTab from './ChiTietTTChungTab';
+import ChiTietTTCongViecTab from './ChiTietTTCongViecTab';
+import ChiTietTTTiemChungTab from './ChiTietTTTiemChungTab';
+import ChiTietTTSucKhoeTab from './ChiTietTTSucKhoeTab';
+import ChiTietBenhNgheNghiep from './ChiTietBenhNgheNghiepTab';
+import ChiTietTaiNanLaoDong from './ChiTietTaiNanLaoDong';
+import ChiTietQuanHeThanNhan from './ChiTietQuanHeThanNhan';
+import ChiTietTTTrinhDoDaoTao from './ChiTietTTTrinhDoDaoTao';
 
 type Props = {}
 
 const DSNhanSuChiTiet = (props: Props) => {
     const navigate = useNavigate();
     const [keyword, setKeyword] = useState<string>("");
-    const [totalElements, setTotalElements] = useState<number>(0);
-    const [numberOfElements, setNumberOfElements] = useState<number>(0);
-    const [showAddNewDialog, setShowAddNewDialog] = useState<boolean>(false);
 
     const handleChange = (e: any) => {
         setKeyword(e.target.value);
@@ -24,23 +32,48 @@ const DSNhanSuChiTiet = (props: Props) => {
     const handleSearch = () => {
     };
 
-    // const danhsachTabs = [
-    //     {
-    //         eventKey: "0",
-    //         title: "Kết quả khám tổng quát",
-    //         component: <KetQuaKhamTongQuat />,
-    //     },
-    //     {
-    //         eventKey: "1",
-    //         title: "Kết quả xét nhiệm",
-    //         component: <KetQuaXetNghiem />,
-    //     },
-    //     {
-    //         eventKey: "1",
-    //         title: "Kết quả chuẩn đoán hình ảnh",
-    //         component: <KetQuaChuanDoanHinhAnh />,
-    //     },
-    // ]
+    const danhsachTabs = [
+        {
+            eventKey: "0",
+            title: <i className="bi bi-person-vcard-fill fs-1"></i>,
+            component: <ChiTietTTChungTab />,
+        },
+        {
+            eventKey: "1",
+            title: <i className="bi bi-briefcase-fill fs-1"></i>,
+            component: <ChiTietTTCongViecTab />,
+        },
+        {
+            eventKey: "2",
+            title: <i className="bi bi-heart-fill fs-1"></i>,
+            component: <ChiTietTTSucKhoeTab />,
+        },
+        {
+            eventKey: "3",
+            title: <i className="bi bi-person-workspace fs-1"></i>,
+            component: <ChiTietBenhNgheNghiep />,
+        },
+        {
+            eventKey: "4",
+            title: <i className="fa-solid fa-user-injured fs-1"></i>,
+            component: <ChiTietTaiNanLaoDong />,
+        },
+        {
+            eventKey: "5",
+            title: <i className="fa-solid fa-clipboard-check fs-1"></i>,
+            component: <ChiTietTTTrinhDoDaoTao />,
+        },
+        {
+            eventKey: "6",
+            title: <i className="bi bi-people-fill fs-1"></i>,
+            component: <ChiTietQuanHeThanNhan />,
+        },
+        {
+            eventKey: "7",
+            title: <i className="fa-solid fa-syringe fs-1"></i>,
+            component: <ChiTietTTTiemChungTab />,
+        },
+    ]
 
     return (
         <div className='wrapper-content'>
@@ -132,7 +165,11 @@ const DSNhanSuChiTiet = (props: Props) => {
                     </div>
                 </Col>
                 <Col xs="9" className='bg-white nhan-su-chi-tiet'>
-                    {/* <TabMenu danhsachTabs={danhsachTabs} className='justify-content-start' /> */}
+                    <TabMenu
+                        danhsachTabs={danhsachTabs}
+                        className='justify-content-start h-55px'
+                        isIconTitle={true}
+                    />
                 </Col>
             </Row>
         </div>

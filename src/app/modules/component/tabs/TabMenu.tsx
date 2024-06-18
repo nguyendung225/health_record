@@ -6,10 +6,11 @@ type TabMenuProps = {
     danhsachTabs: tab[];
     keyDanhSachTabs?: string;
     className?: string;
+    isIconTitle?: boolean;
 }
 
 export const TabMenu: FC<TabMenuProps> = (props) => {
-    const { danhsachTabs} = props;
+  const { danhsachTabs, isIconTitle } = props;
     const [activeTab, setActiveTab] = useState<string>("0");
     const [tabs, setTabs] = useState<tab[]>([]);
 
@@ -36,9 +37,15 @@ export const TabMenu: FC<TabMenuProps> = (props) => {
               eventKey={index}
               key={item.eventKey}
               title={
-                <div className="label">
-                  <span>{item?.title}</span>
-                </div>
+                isIconTitle ? (
+                  <div className="iconLabel">
+                    { item?.title }
+                  </div>
+                ): (
+                  <div className="label">
+                    <span>{item?.title}</span>
+                  </div>
+                )
               }
             >
               {item.component}

@@ -8,19 +8,20 @@ type Props = {
   name: string,
   isView?: boolean,
   value: boolean,
-  handleChange: any;
+  handleChange: any,
+  className?: string
 };
 
 const CheckboxField = (props: Props) => {
-  const { label, name, isView, value, handleChange } = props;
+  const { label, name, isView, value, handleChange, className } = props;
   const intl = useIntl();
   return (
-    <>
+    <div className={className}>
       <span className='text-label'>
         {intl.formatMessage({ id: label })}
       </span>
       <input type="checkbox"
-        className="form-check-input mt-0 checkbox-content"
+        className="form-check-input mt-0 checkbox-content me-2"
         value={value?'true':'false'}
         onChange={handleChange}
         disabled={isView}
@@ -30,7 +31,7 @@ const CheckboxField = (props: Props) => {
       <ErrorMessage name={name}>
         {(msg) => <div className='text-danger'>{msg}</div>}
       </ErrorMessage>
-    </>
+    </div>
   );
 };
 
