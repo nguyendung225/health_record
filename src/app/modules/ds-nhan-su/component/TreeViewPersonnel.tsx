@@ -145,7 +145,7 @@ const TreeViewPersonnel: React.FC<IProps> = ({
     <>
       <div className="spaces fs-14 text-header-table fw-600 pt-12">{title}</div>
       {hasSearchInput && (
-        <div className="mt-12">
+        <div className="mt-4">
           <InputSearch
             onChange={() => { }}
             handleSearch={() => { }}

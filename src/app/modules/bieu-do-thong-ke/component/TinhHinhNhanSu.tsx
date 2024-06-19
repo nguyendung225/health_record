@@ -1,14 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
 import { Button } from 'react-bootstrap';
+import ChiTietBieuDo from './ChiTietBieuDo';
 
 type Props = {}
 
 const TinhHinhNhanSu = (props: Props) => {
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     const chartRef = useRef(null);
 
-    useEffect(() => {
+    const initChart = () => {
         const chartInstance = echarts.init(chartRef.current);
 
         const data = {
@@ -76,10 +78,23 @@ const TinhHinhNhanSu = (props: Props) => {
 
         chartInstance.setOption(options);
 
+        return chartInstance;
+    }    
+
+    useEffect(() => {
+        const chartInstance = initChart();
+
         return () => {
             chartInstance.dispose();
         };
     }, []);
+
+    const handleShowModal = () => {
+        setShowModal(true);
+        setTimeout(() => {
+            const chartInstance = initChart();
+        }, 0);
+    };
 
     return (
         <div className='d-flex flex-row flex-center'>
@@ -88,6 +103,15 @@ const TinhHinhNhanSu = (props: Props) => {
                 style={{ height: '400px', width: '100%' }}
             />
             <div>
+                <Button
+                    className='spaces w-80 button-primary py-4 h-31 mx-4 mb-10'
+                    size='sm'
+                    variant='primary'
+                    onClick={handleShowModal}
+                >
+                    <i className="bi bi-eye fs-2"></i>
+                    Xem
+                </Button>
                 <Button
                     className='spaces w-80 button-primary py-4 h-31 mx-4 mb-10'
                     size='sm'
@@ -134,6 +158,13 @@ const TinhHinhNhanSu = (props: Props) => {
                     JPEG
                 </Button>
             </div>
+
+            <ChiTietBieuDo
+                showModal={showModal}
+                setShowModal={setShowModal}
+                chartRef={chartRef}
+                title={"Biểu đồ thống kê tình hình nhân sự"}
+            />
         </div>
     );
 }
