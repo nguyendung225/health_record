@@ -7,7 +7,7 @@ const DenHanKhamSK = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
     const chartRef = useRef(null);
 
-    const initChart = (isLegend = false, radius = '50%') => {
+    const initChart = (isLegend = true, radius = '50%') => {
         const chart = echarts.init(chartRef.current);
         const data = [
             { name: 'Đến hạn khám', value: 50 },
@@ -24,8 +24,8 @@ const DenHanKhamSK = () => {
                 }
             },
             legend: isLegend ? {
-                orient: 'vertical',
-                left: 'left',
+                orient: 'horizontal',
+                left: '6%',
                 data: data.map(item => item.name),
             } : undefined,
             series: [
@@ -33,7 +33,7 @@ const DenHanKhamSK = () => {
                     name: 'Hạn khám sức khỏe',
                     type: 'pie',
                     radius: radius,
-                    center: ['50%', '50%'],
+                    center: ['40%', '50%'],
                     data: data,
                     label: {
                         formatter: '{d}%',
@@ -70,7 +70,7 @@ const DenHanKhamSK = () => {
     };
 
     return (
-        <div className='d-flex flex-row flex-center'>
+        <div className='d-flex justify-content-between align-items-center spaces p-4'>
             <div
                 ref={chartRef}
                 style={{ height: '400px', width: '90%' }}

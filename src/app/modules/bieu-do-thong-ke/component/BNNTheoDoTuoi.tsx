@@ -52,25 +52,29 @@ const BNNTheoDoTuoi = (props: Props) => {
                     name: 'Phổi',
                     type: 'bar',
                     data: data.phoi,
-                    itemStyle: { color: '#009299' }
+                    itemStyle: { color: '#009299' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Tim mạch',
                     type: 'bar',
                     data: data.timMach,
-                    itemStyle: { color: '#ff3131' }
+                    itemStyle: { color: '#ff3131' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Viêm da',
                     type: 'bar',
                     data: data.viemDa,
-                    itemStyle: { color: '#ffbd59' }
+                    itemStyle: { color: '#ffbd59' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Ù tai (điếc)',
                     type: 'bar',
                     data: data.diec,
-                    itemStyle: { color: '#2f5f98' }
+                    itemStyle: { color: '#2f5f98' },
+                    barWidth: '20%'
                 }
             ]
         };
@@ -95,7 +99,7 @@ const BNNTheoDoTuoi = (props: Props) => {
     };
 
     return (
-        <div className='d-flex flex-row flex-center'>
+        <div className='d-flex justify-content-center align-items-center spaces p-4'>
             <div
                 ref={chartRef}
                 style={{ height: '400px', width: '100%' }}

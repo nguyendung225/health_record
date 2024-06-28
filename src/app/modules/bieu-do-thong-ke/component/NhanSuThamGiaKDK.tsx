@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
 import { Button } from 'react-bootstrap';
 import ChiTietBieuDo from './ChiTietBieuDo';
+import { left, right } from '@popperjs/core';
 
 const NhanSuThamGiaKDK = () => {
     const chartRef = useRef(null);
@@ -28,9 +29,8 @@ const NhanSuThamGiaKDK = () => {
                 }
             },
             legend: {
-                orient: 'vertical',
-                left: 'left',
-                top: 'middle',
+                orient: 'horizontal',
+                left: '6%',
                 data: data.map(item => item.name),
                 formatter: (name: string) => {
                     const item = data.find(d => d.name === name);
@@ -42,7 +42,7 @@ const NhanSuThamGiaKDK = () => {
                     name: 'Trạng thái khám',
                     type: 'pie',
                     radius: radius,
-                    center: ['50%', '50%'],
+                    center: ['50%', '48%'],
                     data: data,
                     label: {
                         formatter: '{d}%'
@@ -79,7 +79,7 @@ const NhanSuThamGiaKDK = () => {
     };
 
     return (
-        <div className='d-flex flex-row flex-center'>
+        <div className='d-flex justify-content-between align-items-center spaces p-4'>
             <div
                 ref={chartRef}
                 style={{ height: '400px', width: '100%' }}

@@ -51,13 +51,15 @@ const BNNTheoGioiTinh = (props: Props) => {
                     name: 'Nam',
                     type: 'bar',
                     data: data.phoi,
-                    itemStyle: { color: '#545454' }
+                    itemStyle: { color: '#545454' },
+                    barWidth: '34%',
                 },
                 {
                     name: 'Nữ',
                     type: 'bar',
                     data: data.timMach,
-                    itemStyle: { color: '#ff914d' }
+                    itemStyle: { color: '#ff914d' },
+                    barWidth: '34%',
                 },
             ]
         };
@@ -82,10 +84,10 @@ const BNNTheoGioiTinh = (props: Props) => {
     };
 
     return (
-        <div className='d-flex flex-row flex-center'>
+        <div className='d-flex justify-content-between align-items-center spaces p-4'>
             <div
                 ref={chartRef}
-                style={{ height: '400px', width: '100%' }}
+                style={{ height: '400px', width: '50%' }}
             />
             <div>
                 <Button

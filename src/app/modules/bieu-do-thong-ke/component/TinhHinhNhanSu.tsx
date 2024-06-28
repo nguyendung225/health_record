@@ -53,25 +53,29 @@ const TinhHinhNhanSu = (props: Props) => {
                     name: 'Đang làm việc',
                     type: 'bar',
                     data: data.working,
-                    itemStyle: { color: '#00A3E0' }
+                    itemStyle: { color: '#00A3E0' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Nghỉ chế độ',
                     type: 'bar',
                     data: data.retired,
-                    itemStyle: { color: '#1A237E' }
+                    itemStyle: { color: '#1A237E' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Đình chỉ công tác',
                     type: 'bar',
                     data: data.suspended,
-                    itemStyle: { color: '#8BC34A' }
+                    itemStyle: { color: '#8BC34A' },
+                    barWidth: '20%'
                 },
                 {
                     name: 'Thôi việc',
                     type: 'bar',
                     data: data.resigned,
-                    itemStyle: { color: '#212121' }
+                    itemStyle: { color: '#212121' },
+                    barWidth: '20%'
                 }
             ]
         };
@@ -97,7 +101,7 @@ const TinhHinhNhanSu = (props: Props) => {
     };
 
     return (
-        <div className='d-flex flex-row flex-center'>
+        <div className='d-flex justify-content-center align-items-center spaces p-4'>
             <div
                 ref={chartRef}
                 style={{ height: '400px', width: '100%' }}
